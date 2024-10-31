@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -49,7 +50,8 @@ fun Inventory () {
     if (errorMessage != null) {
         Text(
             text = errorMessage ?: "Unknown error",
-            modifier = Modifier.padding(16.dp))
+            modifier = Modifier.padding(16.dp),
+            color = MaterialTheme.colorScheme.onBackground)
     } else {
         val groupedItems = items.groupBy { it.listId }
         Column (
